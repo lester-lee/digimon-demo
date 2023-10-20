@@ -1,3 +1,4 @@
+import DigimonCard from './DigimonCard';
 import { useGetDigimonQuery } from './digimonSlice';
 
 export default function DigimonList() {
@@ -6,7 +7,7 @@ export default function DigimonList() {
   return (
     <ul>
       {digimon?.map((d) => (
-        <li key={d.name}>{d.name}</li>
+        <DigimonCard key={d.id} digimon={d} />
       ))}
     </ul>
   );
