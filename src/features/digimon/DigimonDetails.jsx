@@ -1,6 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { useGetDigimonByIdQuery } from './digimonSlice';
-export default function SingleDigimonView() {
+
+import './DigimonDetails.scss';
+
+export default function DigimonDetails() {
   const { id } = useParams();
   const { data: digimon } = useGetDigimonByIdQuery(id);
 
@@ -9,7 +12,7 @@ export default function SingleDigimonView() {
   }
 
   return (
-    <>
+    <div className="digimon-details">
       <h1>{digimon.name}</h1>
       <img src={digimon.images[0].href} />
       <p>{digimon.descriptions[0].description}</p>
@@ -19,6 +22,6 @@ export default function SingleDigimonView() {
           <li key={skill.id}>{skill.skill}</li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }

@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom';
+import './Root.scss';
 
 export default function Root() {
   return (
