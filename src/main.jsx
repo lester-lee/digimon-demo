@@ -15,11 +15,9 @@ const router = createBrowserRouter([
     path: '/',
     element: <Root />,
     children: [
-      {
-        path: '/',
-        element: <DigimonList />,
-        children: [{ path: '/:id', element: <DigimonDetails /> }],
-      },
+      { path: '', element: <DigimonList /> },
+      { path: 'digimon', element: <DigimonList /> },
+      { path: 'digimon/:id', element: <DigimonDetails /> },
     ],
   },
 ]);
